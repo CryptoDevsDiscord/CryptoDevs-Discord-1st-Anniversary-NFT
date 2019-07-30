@@ -1,0 +1,27 @@
+{
+  "name": "@cryptodevs/cryptodevs-discord-1st-anniversary-nft",
+  "version": "1.0.0",
+  "description": "uguu",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "chain": "ganache-cli",
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luiserebii/CryptoDevs-Discord-1st-Anniversary-NFT.git"
+  },
+  "author": "Luiserebii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Luiserebii/CryptoDevs-Discord-1st-Anniversary-NFT/issues"
+  },
+  "homepage": "https://github.com/Luiserebii/CryptoDevs-Discord-1st-Anniversary-NFT#readme",
+  "devDependencies": {
+    "ganache-cli": "^6.5.0",
+    "truffle": "^5.0.29"
+  }
+}
