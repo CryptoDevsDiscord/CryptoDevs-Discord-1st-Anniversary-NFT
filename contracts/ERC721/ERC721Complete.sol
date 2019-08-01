@@ -13,7 +13,7 @@ import "./ERC721MetadataSinglular.sol";
 contract ERC721Complete is ERC721, ERC721Enumerable, ERC721MetadataSingular, ERC721Mintable {
 
     constructor(string memory name, string memory symbol, string memory tokenURI) public ERC721MetadataSingular(name, symbol, tokenURI) {
-        
+       //Simply passing constructor params along 
     }
 
 }
