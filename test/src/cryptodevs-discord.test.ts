@@ -10,6 +10,10 @@
 import solidityTest = require('solidity-test');
 const solAssert = solidityTest.solAssert;
 
+import fs = require('fs');
+import path = require('path');
+const config = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../config.json')));
+
 // @ts-ignore
 const CryptoDevs1stAnnversaryToken = artifacts.require('CryptoDevs1stAnnversaryToken');
 
@@ -41,8 +45,35 @@ contract('CryptoDevs1stAnnversaryToken', (accounts) => {
 
     })
  
-    it('l337 mods can mint', async () => {
+    describe('l337 mods can mint', async () => {
+      it('Kiwi', async () => {
 
+      })
+      it('Clément', async () => {
+
+      })
+      it('Kinrezc', async () => {
+
+      })
+      it('Moro', async () => {
+
+      })
+
+    })
+
+  })
+
+  describe('token fields are expected', async () => {
+
+    it('name', async () => {
+
+    })
+
+    it('symbol', async () => {
+
+    })
+
+    it('tokenURI', async () => {
 
     })
 
