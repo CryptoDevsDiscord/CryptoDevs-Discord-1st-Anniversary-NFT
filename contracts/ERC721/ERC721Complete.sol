@@ -7,13 +7,13 @@ import "./ERC721MetadataSinglular.sol";
 
 /**
  * @title Complete ERC721 Token
- * @dev Combines the 
+ * @dev Combines the ERC721 Enumerable, MetadataSingular, and Mintable contracts together
  *
  */
 contract ERC721Complete is ERC721, ERC721Enumerable, ERC721MetadataSingular, ERC721Mintable {
 
     constructor(string memory name, string memory symbol, string memory tokenURI) public ERC721MetadataSingular(name, symbol, tokenURI) {
-
+        
     }
 
 }
