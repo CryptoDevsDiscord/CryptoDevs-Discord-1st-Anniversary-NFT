@@ -2,6 +2,13 @@
 
 An ERC721 celebrating the 1st Anniversary of the CryptoDevs Discord! :tada::tada::tada:
 
+## Metadata
+
+Current metadata settings:
+* **name**: CryptoDevs1stAnniversaryToken
+* **symbol**: CRYPDEV1
+* **tokenURI**: QmTY8w7BfVLdyiheuTcEZ6nVCV1dZEDDfXrpRmGejzXR2k
+
 ## Development
 
 Very simple, relies on an instance of `ganache-cli` to run a local blockchain. Conveniently simplified within npm scripts.
@@ -11,5 +18,5 @@ Run tests: `npm test`
 
 ## IPFS
 
-IPFS Hash: QmTY8w7BfVLdyiheuTcEZ6nVCV1dZEDDfXrpRmGejzXR2k<br>
+The token's image is uploaded at the following IPFS Hash: QmTY8w7BfVLdyiheuTcEZ6nVCV1dZEDDfXrpRmGejzXR2k<br>
 Viewable at: https://gateway.temporal.cloud/ipfs/QmTY8w7BfVLdyiheuTcEZ6nVCV1dZEDDfXrpRmGejzXR2k
