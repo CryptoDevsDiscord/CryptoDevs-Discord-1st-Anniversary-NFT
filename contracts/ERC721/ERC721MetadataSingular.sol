@@ -1,10 +1,10 @@
 pragma solidity ^0.5.0;
 
-import "./ERC721.sol";
-import "./IERC721Metadata.sol";
-import "../../introspection/ERC165.sol";
+import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
+import "openzeppelin-solidity/contracts/token/ERC721/IERC721Metadata.sol";
+import "openzeppelin-solidity/contracts/introspection/ERC165.sol";
 
-contract ERC721Metadata is ERC165, ERC721, IERC721Metadata {
+contract ERC721MetadataSingular is ERC165, ERC721, IERC721Metadata {
     // Token name
     string private _name;
 
@@ -52,9 +52,8 @@ contract ERC721Metadata is ERC165, ERC721, IERC721Metadata {
     }
 
     /**
-     * @dev Returns an URI for a given token ID.
-     * Throws if the token ID does not exist. May return an empty string.
-     * @param tokenId uint256 ID of the token to query
+     * @dev Gets the tokenURI.
+     * @return string representing the token URI
      */
     function tokenURI() external view returns (string memory) {
         return _tokenURI;
@@ -62,8 +61,6 @@ contract ERC721Metadata is ERC165, ERC721, IERC721Metadata {
 
     /**
      * @dev Internal function to set the token URI for a given token.
-     * Reverts if the token ID does not exist.
-     * @param tokenId uint256 ID of the token to set its URI
      * @param uri string URI to assign
      */
     function _setTokenURI(string memory uri) internal {

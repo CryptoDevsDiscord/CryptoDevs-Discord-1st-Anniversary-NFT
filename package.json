@@ -22,7 +22,8 @@
   "homepage": "https://github.com/Luiserebii/CryptoDevs-Discord-1st-Anniversary-NFT#readme",
   "devDependencies": {
     "ganache-cli": "^6.5.0",
-    "truffle": "^5.0.29"
+    "truffle": "^5.0.29",
+    "typescript": "^3.5.3"
   },
   "dependencies": {
     "openzeppelin-solidity": "^2.3.0"
