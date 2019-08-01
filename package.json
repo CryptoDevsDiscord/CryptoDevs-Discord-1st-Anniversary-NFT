@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/mocha": "^5.2.7",
     "ganache-cli": "^6.5.0",
+    "solidity-test": "0.0.5-alpha",
     "truffle": "^5.0.29",
     "typescript": "^3.5.3"
   },

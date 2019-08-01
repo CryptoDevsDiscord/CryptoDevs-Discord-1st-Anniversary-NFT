@@ -14,8 +14,11 @@ let instances: object = {};
 // @ts-ignore
 contract('CryptoDevs1stAnnversaryToken', (accounts) => {
 
-  it('meme', async () => {
+  const Kiwi = accounts[0];
+  const noobs = accounts.slice(1);
 
+  it('meme', async () => {
+    
   })
 
 })
