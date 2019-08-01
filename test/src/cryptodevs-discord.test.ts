@@ -7,7 +7,7 @@
 */
 
 // @ts-ignore
-const solidityTest = require('solidity-test');
+import solidityTest = require('solidity-test');
 const solAssert = solidityTest.solAssert;
 
 // @ts-ignore
