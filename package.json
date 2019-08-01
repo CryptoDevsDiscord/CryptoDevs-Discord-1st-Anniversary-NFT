@@ -8,7 +8,7 @@
   },
   "scripts": {
     "chain": "ganache-cli",
-    "test": "tsc --project ./test/tsconfig.json && truffle test"
+    "test": "tsc --project ./test/tsconfig.json && truffle test ./test/bin/*"
   },
   "repository": {
     "type": "git",

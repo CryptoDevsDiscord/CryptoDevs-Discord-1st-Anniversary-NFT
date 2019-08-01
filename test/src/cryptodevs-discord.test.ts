@@ -7,6 +7,10 @@
 */
 
 // @ts-ignore
+const solidityTest = require('solidity-test');
+const solAssert = solidityTest.solAssert;
+
+// @ts-ignore
 const CryptoDevs1stAnnversaryToken = artifacts.require('CryptoDevs1stAnnversaryToken');
 
 let instances: object = {};
