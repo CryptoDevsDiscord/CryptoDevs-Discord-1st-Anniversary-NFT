@@ -18,11 +18,34 @@ let instances: object = {};
 // @ts-ignore
 contract('CryptoDevs1stAnnversaryToken', (accounts) => {
 
-  const Kiwi = accounts[0];
-  const noobs = accounts.slice(1);
+  const Kiwi: string = accounts[0];
+  const Clément: string = accounts[1];
+  const Kinrezc: string = accounts[2];
+  const Moro: string = accounts[3];
 
-  it('meme', async () => {
+  const noobs: string[] = accounts.slice(4);
+
+  describe('mint', async () => {
+
+    it('Kiwi can mint', async () => {
+
+    })
     
+    it('noobs cannot mint :(', async () => {
+    
+
+    })
+
+    it('Kiwi can mod mods', async () => {
+
+
+    })
+ 
+    it('l337 mods can mint', async () => {
+
+
+    })
+
   })
 
 })
