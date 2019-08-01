@@ -1,10 +1,10 @@
 pragma solidity ^0.5.0;
 
 import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
-import "openzeppelin-solidity/contracts/token/ERC721/IERC721Metadata.sol";
+import "./IERC721MetadataSingular.sol";
 import "openzeppelin-solidity/contracts/introspection/ERC165.sol";
 
-contract ERC721MetadataSingular is ERC165, ERC721, IERC721Metadata {
+contract ERC721MetadataSingular is ERC165, ERC721, IERC721MetadataSingular {
     // Token name
     string private _name;
 
