@@ -1,4 +1,6 @@
 # :tada: CryptoDevs Discord 1st Anniversary NFT :tada:
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/CryptoDevsDiscord/CryptoDevs-Discord-1st-Anniversary-NFT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/CryptoDevsDiscord/CryptoDevs-Discord-1st-Anniversary-NFT/context:javascript)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/CryptoDevsDiscord/CryptoDevs-Discord-1st-Anniversary-NFT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/CryptoDevsDiscord/CryptoDevs-Discord-1st-Anniversary-NFT/alerts/)
 
 An ERC721 celebrating the 1st Anniversary of the CryptoDevs Discord! :tada::tada::tada:
 
