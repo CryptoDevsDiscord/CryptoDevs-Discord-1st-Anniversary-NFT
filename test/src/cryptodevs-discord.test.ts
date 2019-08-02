@@ -73,7 +73,11 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
     })
     
     it('noobs cannot mint :(', async () => {
-    
+      await solAssert.revert(
+        async () => {
+          await instances.CryptoDevs1stAnniversaryToken.mint(noobs[1], { from: noobs[0] });
+        }
+      , 'MinterRole: caller does not have the Minter role');    
 
     })
 
