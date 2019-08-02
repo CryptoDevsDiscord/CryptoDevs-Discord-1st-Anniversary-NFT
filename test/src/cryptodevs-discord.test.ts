@@ -47,18 +47,21 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
 
     it('Kiwi can mint, and minting increases counter', async () => {
 
+      //Define this pitiful noob
+      const noob: string = noobs[0];
+
       //Grab counter value, ensure is 0
       const nextID: number = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
       assert.strictEqual(nextID, expectedNextID);
 
       //Check that noob 0 has no token
-      assert.strictEqual(await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob[0]), 0);
+      assert.strictEqual(await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob), 0);
 
       //Kiwi graciously mints a token
-      assert.ok(await instances.CryptoDevs1stAnniversaryToken.mint(noob[0], { from: Kiwi }));
+      assert.ok(await instances.CryptoDevs1stAnniversaryToken.mint(noob, { from: Kiwi }));
       
       //Check that noob, indeed, has received a token
-      assert.strictEqual(await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob[0]), 1);
+      assert.strictEqual(await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob), 1);
 
       //Check counter value has increased, therefore should be at 1
       const postNextID: number = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
