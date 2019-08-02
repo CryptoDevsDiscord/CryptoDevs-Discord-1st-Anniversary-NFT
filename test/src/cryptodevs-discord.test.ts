@@ -15,7 +15,7 @@ const assert = chai.assert;
 
 import fs = require('fs');
 import path = require('path');
-const config: object = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../config.json'), 'utf8'));
+const config: any = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../config.json'), 'utf8'));
 
 // @ts-ignore
 import BN = web3.utils.BN;
@@ -82,7 +82,7 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
     })
 
     it('Kiwi can mod mods', async () => {
-
+      
 
     })
  
@@ -114,15 +114,18 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
   describe('token fields are expected', async () => {
 
     it('name', async () => {
-      
+      const name: string = await instances.CryptoDevs1stAnniversaryToken.name.call();
+      assert.equal(name, config.name);
     })
 
     it('symbol', async () => {
-
+      const sym: string = await instances.CryptoDevs1stAnniversaryToken.symbol.call();
+      assert.equal(sym, config.symbol);
     })
 
     it('tokenURI', async () => {
-
+      const tokenURI: string = await instances.CryptoDevs1stAnniversaryToken.tokenURI.call();
+      assert.equal(tokenURI, config.tokenURI);
     })
 
   })
