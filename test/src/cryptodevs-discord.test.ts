@@ -85,7 +85,10 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
     })
 
     it('Kiwi can mod mods', async () => {
-      
+
+      assert.ok(await instances.CryptoDevs1stAnniversaryToken.addMinter(Clément, { from: Kiwi }));
+      assert.ok(await instances.CryptoDevs1stAnniversaryToken.addMinter(Kinrezc, { from: Kiwi }));
+      assert.ok(await instances.CryptoDevs1stAnniversaryToken.addMinter(Moro, { from: Kiwi }));
 
     })
  
