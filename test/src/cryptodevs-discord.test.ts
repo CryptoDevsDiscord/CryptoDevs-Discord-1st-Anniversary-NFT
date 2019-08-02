@@ -40,6 +40,12 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
   describe('mint', async () => {
 
     it('Kiwi can mint', async () => {
+      //Check that noob 1 has no token
+      assert.isTrue((await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob[0]) === 0));
+
+      //Kiwi graciously mints a token
+      assert.ok(await instances.CryptoDevs1stAnniversaryToken.mint(, { from: Kiwi }));
+      
 
     })
     
@@ -65,6 +71,13 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
       })
       it('Moro', async () => {
 
+      })
+      it('flex (check comments)', async () => {
+        // * This actually doesn't do anything, but I wanted flex to feel special :(
+        // * It is also important to keep the channel #flex-chat secret
+
+        // * I have therefore gifted him with a test that will never fail
+        // * One which will never falter in the darkness of blockchain development (dot) (dot) (dot)
       })
 
     })
