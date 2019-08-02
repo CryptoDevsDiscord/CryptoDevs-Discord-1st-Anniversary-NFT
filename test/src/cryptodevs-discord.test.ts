@@ -88,15 +88,75 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
  
     describe('l337 mods can mint', async () => {
       it('Kiwi', async () => {
-
+        //THIS WAS PERFORMED EARLIER BUT FOR THE SAKE OF INCLUSION IT IS BEING KEPT AAAAAAAAA
       })
       it('Clément', async () => {
+
+        //Define this pitiful noob
+        const noob: string = noobs[1];
+
+        //Grab counter value, ensure value is expected
+        const nextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
+        assert.isTrue(nextID.eq(expectedNextID));
+
+        //Check that noob has no token
+        assert.isTrue((await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob)).eq(new BN(0)));
+
+        //Clément graciously mints a token
+        assert.ok(await instances.CryptoDevs1stAnniversaryToken.mint(noob, { from: Clément }));
+      
+        //Check that noob, indeed, has received a token
+        assert.isTrue((await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob)).eq(new BN(1)));
+
+        //Check counter value has increased, therefore should be at... increased value
+        const postNextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
+        assert.isTrue(postNextID.eq(expectedNextID.add(new BN(1))));
 
       })
       it('Kinrezc', async () => {
 
+        //Define this pitiful noob
+        const noob: string = noobs[2];
+
+        //Grab counter value, ensure value is expected
+        const nextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
+        assert.isTrue(nextID.eq(expectedNextID));
+
+        //Check that noob has no token
+        assert.isTrue((await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob)).eq(new BN(0)));
+
+        //Kinrezc graciously mints a token
+        assert.ok(await instances.CryptoDevs1stAnniversaryToken.mint(noob, { from: Kinrezc }));
+      
+        //Check that noob, indeed, has received a token
+        assert.isTrue((await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob)).eq(new BN(1)));
+
+        //Check counter value has increased, therefore should be at... increased value
+        const postNextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
+        assert.isTrue(postNextID.eq(expectedNextID.add(new BN(1))));
+
       })
       it('Moro', async () => {
+
+        //Define this pitiful noob
+        const noob: string = noobs[3];
+
+        //Grab counter value, ensure value is expected
+        const nextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
+        assert.isTrue(nextID.eq(expectedNextID));
+
+        //Check that noob has no token
+        assert.isTrue((await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob)).eq(new BN(0)));
+
+        //Moro graciously mints a token
+        assert.ok(await instances.CryptoDevs1stAnniversaryToken.mint(noob, { from: Moro }));
+      
+        //Check that noob, indeed, has received a token
+        assert.isTrue((await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob)).eq(new BN(1)));
+
+        //Check counter value has increased, therefore should be at... increased value
+        const postNextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
+        assert.isTrue(postNextID.eq(expectedNextID.add(new BN(1))));
 
       })
       it('flex (check comments)', async () => {
@@ -105,6 +165,7 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
 
         // * I have therefore gifted him with a test that will never fail
         // * One which will never falter in the darkness of blockchain development (dot) (dot) (dot)
+        assert.isTrue(true);
       })
 
     })
