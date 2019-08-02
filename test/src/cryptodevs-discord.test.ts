@@ -68,7 +68,10 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
 
       //Check counter value has increased, therefore should be at 1
       const postNextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
-      assert.isTrue(postNextID.eq(expectedNextID.add(new BN(1))));
+
+      //Increment
+      expectedNextID = expectedNextID.add(new BN(1));
+      assert.isTrue(postNextID.eq(expectedNextID));
 
     })
     
@@ -97,7 +100,7 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
 
         //Grab counter value, ensure value is expected
         const nextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
-        assert.isTrue(nextID.eq(expectedNextID));
+        assert.isTrue(nextID.eq(expectedNextID), `"${nextID}" was expected to equal "${expectedNextID}"`);
 
         //Check that noob has no token
         assert.isTrue((await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob)).eq(new BN(0)));
@@ -110,8 +113,10 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
 
         //Check counter value has increased, therefore should be at... increased value
         const postNextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
-        assert.isTrue(postNextID.eq(expectedNextID.add(new BN(1))));
 
+        //Increment
+        expectedNextID = expectedNextID.add(new BN(1));
+        assert.isTrue(postNextID.eq(expectedNextID));
       })
       it('Kinrezc', async () => {
 
@@ -133,7 +138,11 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
 
         //Check counter value has increased, therefore should be at... increased value
         const postNextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
-        assert.isTrue(postNextID.eq(expectedNextID.add(new BN(1))));
+
+        //Increment
+        expectedNextID = expectedNextID.add(new BN(1));
+        assert.isTrue(postNextID.eq(expectedNextID));
+
 
       })
       it('Moro', async () => {
@@ -156,7 +165,10 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
 
         //Check counter value has increased, therefore should be at... increased value
         const postNextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
-        assert.isTrue(postNextID.eq(expectedNextID.add(new BN(1))));
+
+        //Increment
+        expectedNextID = expectedNextID.add(new BN(1));
+        assert.isTrue(postNextID.eq(expectedNextID));
 
       })
       it('flex (check comments)', async () => {
