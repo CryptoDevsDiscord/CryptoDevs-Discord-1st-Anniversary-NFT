@@ -18,6 +18,9 @@ import path = require('path');
 const config: object = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../config.json'), 'utf8'));
 
 // @ts-ignore
+import BN = web3.utils.BN;
+
+// @ts-ignore
 const CryptoDevs1stAnniversaryToken = artifacts.require('CryptoDevs1stAnniversaryToken');
 
 let instances: any = {};
@@ -39,10 +42,10 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
 
   describe('mint', async () => {
 
-    let expectedNextID: number;
+    let expectedNextID: BN;
 
     before(async () => {
-      expectedNextID = 0;
+      expectedNextID = new BN(0);
     })
 
     it('Kiwi can mint, and minting increases counter', async () => {
@@ -51,21 +54,21 @@ contract('CryptoDevs1stAnniversaryToken', (accounts) => {
       const noob: string = noobs[0];
 
       //Grab counter value, ensure is 0
-      const nextID: number = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
-      assert.strictEqual(nextID, expectedNextID);
+      const nextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
+      assert.isTrue(nextID.eq(expectedNextID));
 
       //Check that noob 0 has no token
-      assert.strictEqual(await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob), 0);
+      assert.isTrue((await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob)).eq(new BN(0)));
 
       //Kiwi graciously mints a token
       assert.ok(await instances.CryptoDevs1stAnniversaryToken.mint(noob, { from: Kiwi }));
       
       //Check that noob, indeed, has received a token
-      assert.strictEqual(await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob), 1);
+      assert.isTrue((await instances.CryptoDevs1stAnniversaryToken.balanceOf(noob)).eq(new BN(1)));
 
       //Check counter value has increased, therefore should be at 1
-      const postNextID: number = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
-      assert.strictEqual(postNextID, ++expectedNextID);
+      const postNextID: BN = await instances.CryptoDevs1stAnniversaryToken.nextTokenID.call();
+      assert.isTrue(postNextID.eq(expectedNextID.add(new BN(1))));
 
     })
     
