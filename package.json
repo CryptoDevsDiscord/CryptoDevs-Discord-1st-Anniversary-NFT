@@ -26,11 +26,12 @@
     "@types/node": "^12.6.8",
     "chai": "^4.2.0",
     "ganache-cli": "^6.5.0",
-    "solidity-test": "0.0.6-alpha",
+    "solidity-test": "0.0.7-alpha",
     "truffle": "^5.0.29",
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "openzeppelin-solidity": "2.3.0"
+    "openzeppelin-solidity": "2.3.0",
+    "solidity-deploy": "0.1.0-alpha"
   }
 }
